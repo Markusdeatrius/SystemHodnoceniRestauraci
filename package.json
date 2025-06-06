@@ -16,10 +16,17 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "seed":  "node database/seed.js"
+    "seed": "node database/seed.js",
+    "build:css": "tailwindcss -i ./tailwind.css -o ./public/styles.css --minify",
+    "dev": "vite"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.8",
     "express": "^5.1.0",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "tailwind": "^4.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.8"
   }
 }

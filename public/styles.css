@@ -1,49 +1,82 @@
 @import "tailwindcss";
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+/* Custom color theme for restaurant rating system */
+@layer base {
+  :root {
+    --color-primary: #e53e3e;
+    --color-secondary: #718096;
+    --color-accent: #f6ad55;
+    --color-background: #fffaf0;
+    --color-text: #2d3748;
+  }
 }
 
-h1 {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    margin: 0;
-}
-
-section {
+@layer components {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+  
+  section {
     background-color: white;
-    padding: 1rem;
-    margin: 1rem 0;
     border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    margin-top: 0;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-label {
-    font-weight: bold;
-}
-
-input,
-textarea,
-select {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    outline: none;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  h2 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.5rem;
+  }
+  
+  h3 {
+    color: var(--color-secondary);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+  }
+  
+  .restaurant-item {
+    padding: 0.75rem;
+    border-left: 4px solid var(--color-accent);
+    background-color: #f8f9fa;
+    margin-bottom: 0.5rem;
+    border-radius: 0 0.25rem 0.25rem 0;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .restaurant-item:hover {
+    background-color: #edf2f7;
+    transform: translateX(2px);
+  }
+  
+  .review-item {
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+    background-color: white;
+  }
+  
+  .rating {
+    display: inline-flex;
+    color: var(--color-accent);
+  }
 }
 
 button {
@@ -53,24 +86,38 @@ button {
     cursor: pointer;
     font-size: 1rem;
     margin-top: 1rem;
+    transition: all 0.2s;
 }
 
 button[type="submit"] {     
-    background-color: #007bff;
+    background-color: var(--color-primary);
     color: white;
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #c53030;
+    transform: translateY(-1px);
 }
 
 button[type="button"] {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: var(--color-secondary);
+    color: white;
 }
 
 button[type="button"]:hover {
-    background-color: #e0e0e0;
+    background-color: #4a5568;
+    transform: translateY(-1px);
 }
 
+#delete-restaurant, #delete-review {
+    background-color: #e53e3e;
+}
+
+#delete-restaurant:hover, #delete-review:hover {
+    background-color: #c53030;
+}
+
+#cancel-edit, #cancel-review-edit {
+    background-color: #a0aec0;
+}
 

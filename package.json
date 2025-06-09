@@ -15,18 +15,23 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./public/styles.css -o ./public/output.css --watch",
     "start": "node server.js",
     "seed": "node database/seed.js",
-    "build:css": "tailwindcss -i ./tailwind.css -o ./public/styles.css --minify",
-    "dev": "vite"
+    "dev": "concurrently \"npm run build:css\" \"vite\"",
+    "build": "vite build"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
     "@tailwindcss/vite": "^4.1.8",
     "express": "^5.1.0",
-    "sqlite3": "^5.1.7",
-    "tailwind": "^4.0.0"
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
-    "tailwindcss": "^4.1.8"
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.8",
+    "vite": "^6.3.5"
   }
 }

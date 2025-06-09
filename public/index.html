@@ -5,55 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hodnocení restaurací</title>
+    <meta name="keywords" content="restaurant, rating, review">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="output.css">
 
 </head>
 
-<body>
-    <h1>Systém hodnocení restaurací</h1>
+<body class="flex flex-col items-center justify-center m-15">
+    <h1 class="text-3xl font-bold">Systém hodnocení restaurací</h1>
 
     <!-- Sekce pro restaurace -->
-    <section>
-        <h2>Restaurace</h2>
+    <section class="m-5">
+        <h2 class="text-2xl font-bold">Restaurace</h2>
         <div>
-            <h3>Přidat novou restauraci</h3>
+            <h3 class="text-xl font-bold">Přidat novou restauraci</h3>
             <form id="restaurant-form">
                 <div>
-                    <label for="restaurant-name">Název:</label>
-                    <input type="text" id="restaurant-name" name="name" required>
+                    <label for="restaurant-name" class="font-bold">Název:</label>
+                    <input type="text" id="restaurant-name" name="name" class="input" required>
                 </div>
                 <div>
-                    <label for="restaurant-address">Adresa:</label>
-                    <input type="text" id="restaurant-address" name="address" required>
+                    <label for="restaurant-address" class="font-bold">Adresa:</label>
+                    <input type="text" id="restaurant-address" name="address" class="input" required>
                 </div>
                 <div>
-                    <button type="submit">Přidat restauraci</button>
+                    <button type="submit" class="shadow-sm">Přidat restauraci</button>
                 </div>
             </form>
         </div>
 
         <div>
-            <h3>Seznam restaurací</h3>
+            <h3 class="text-xl font-bold">Seznam restaurací</h3>
             <ul id="restaurant-list"></ul>
         </div>
 
         <div id="restaurant-detail" style="display: none;">
-            <h3>Detail restaurace</h3>
+            <h3 class="text-xl font-bold">Detail restaurace</h3>
             <form id="restaurant-edit-form">
                 <input type="hidden" id="edit-restaurant-id">
                 <div>
-                    <label for="edit-restaurant-name">Název:</label>
-                    <input type="text" id="edit-restaurant-name" name="name" required>
+                    <label for="edit-restaurant-name" class="font-bold">Název:</label>
+                    <input type="text" id="edit-restaurant-name" name="name" class="input" required>
                 </div>
                 <div>
-                    <label for="edit-restaurant-address">Adresa:</label>
-                    <input type="text" id="edit-restaurant-address" name="address" required>
+                    <label for="edit-restaurant-address" class="font-bold">Adresa:</label>
+                    <input type="text" id="edit-restaurant-address" name="address" class="input" required>
                 </div>
                 <div>
-                    <button type="submit">Uložit změny</button>
-                    <button type="button" id="delete-restaurant">Smazat restauraci</button>
-                    <button type="button" id="cancel-edit">Zrušit</button>
+                    <button type="submit" class="shadow-sm">Uložit změny</button>
+                    <button type="button" id="delete-restaurant" class="shadow-sm">Smazat restauraci</button>
+                    <button type="button" id="cancel-edit" class="shadow-sm">Zrušit</button>
                 </div>
             </form>
         </div>
@@ -67,19 +69,19 @@
             <form id="review-form">
                 <div>
                     <label for="review-restaurant">Restaurace:</label>
-                    <select id="review-restaurant" name="restaurant_id" required></select>
+                    <select id="review-restaurant" name="restaurant_id" class="input" required></select>
                 </div>
                 <div>
                     <label for="review-user">Jméno uživatele:</label>
-                    <input type="text" id="review-user" name="user_name" required>
+                    <input type="text" id="review-user" name="user_name" class="input" required>
                 </div>
                 <div>
                     <label for="review-rating">Hodnocení (1-5):</label>
-                    <input type="number" id="review-rating" name="rating" min="1" max="5" required>
+                    <input type="number" id="review-rating" name="rating" min="1" max="5" class="input" required>
                 </div>
                 <div>
                     <label for="review-comment">Komentář:</label>
-                    <textarea id="review-comment" name="comment"></textarea>
+                    <textarea id="review-comment" name="comment" class="input"></textarea>
                 </div>
                 <div>
                     <button type="submit">Přidat recenzi</button>
@@ -98,11 +100,11 @@
                 <input type="hidden" id="edit-review-id">
                 <div>
                     <label for="edit-review-user">Jméno uživatele:</label>
-                    <input type="text" id="edit-review-user" name="user_name" required>
+                    <input type="text" id="edit-review-user" name="user_name" class="input" required>
                 </div>
                 <div>
                     <label for="edit-review-rating">Hodnocení (1-5):</label>
-                    <input type="number" id="edit-review-rating" name="rating" min="1" max="5" required>
+                    <input type="number" id="edit-review-rating" name="rating" min="1" max="5" class="input" required>
                 </div>
                 <div>
                     <label for="edit-review-comment">Komentář:</label>

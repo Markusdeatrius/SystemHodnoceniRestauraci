@@ -12,6 +12,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 const apiRoutes = require('./api/api');
 app.use('/api', apiRoutes); // /api/items
 
+app.use((reg, res, next) => {
+  res.status(404).sendFile(__dirname + '/public/404error.html');
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

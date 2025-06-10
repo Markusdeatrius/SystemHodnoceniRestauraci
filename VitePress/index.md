@@ -9,10 +9,8 @@ hero:
   actions:
     - theme: primary
       text: Přehled restaurací
-      link: /markdown-examples
     - theme: secondary
       text: Přehled hodnocení
-      link: /api-examples
 
 features:
   - title: Pridani restauraci

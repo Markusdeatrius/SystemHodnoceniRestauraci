@@ -1,10 +1,16 @@
 # Marek Vyletal
 ---
 ## Zvolené rozšíření
-- Popisek
-- Popisek2
+- TailwindCss
+- Concurrently
+- postcss
+- vite
+- vitepress
+- sqlite3
+- express
 ---
 ## Spuštění aplikace
 
-- Popisek
-- Popisek2
+- npm run build:css -TailwindCss
+- npm run start -node server.js
+---
